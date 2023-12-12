@@ -1,0 +1,596 @@
+
+html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+  }
+
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /*Video background and placeholder for the Background*/
+
+  .video-content {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+  }
+
+  /* Create the parallax scrolling for video effect */
+
+  .video-content video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  /*Placeholder for the first page in order to prevent the 'block-collapse'*/
+
+  .placeholder-for-video {
+      background: rgba(0,0,0,0.5);
+      color: whitesmoke;
+      height: 100vh;
+      overflow: hidden;
+  }
+
+  .placeholder-for-video h1 {
+      font-size: 450%;
+      text-align: center;
+      font-weight: bold;
+      font-variant: small-caps;
+      padding: 20%;
+  }
+
+  .placeholder-for-video p {
+      overflow: hidden;
+      font-size: 110%;
+      margin-top: 5%;
+      text-align: center;
+      font-weight: lighter;
+  }
+
+  /* 1. section: About*/
+  .section1, .section3 {
+      background-color: #f1f1f1;
+      min-height: 100vh;
+      color: black;
+      overflow: hidden;
+  }
+
+  .section3 h1 {
+    margin-top: 8%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    font-size: 450%;
+    font-variant: small-caps;
+  }
+
+  .section1 h1, .section2 h1 {
+      font-size: 450%;
+      padding: 5%;
+      font-variant: small-caps;
+  }
+
+  .section1 h1 {
+    margin-top: 30%;
+  }
+
+  .section1 p {
+      font-size: 150%;
+      padding: 1%;
+  }
+
+  .section1 ul {
+      font-size: 150%;
+      margin-left: 1%;
+      padding-bottom: 1%;
+  }
+
+  .section1 li {
+      padding-left: 3%;
+      margin-left: 8%;
+      margin-bottom: 1%;
+  }
+
+  /*Section 1 left*/
+
+  #left1 {
+      float: left;
+      max-width: 40%;
+      margin-left: 10%;
+  }
+
+  /*Section 1 right*/
+
+  #right1 {
+      float: right;
+      width: 50%;
+      max-width: 40%;
+      min-height: 100vh;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      margin-right: 10%;
+      background: url("../img/me.png");
+      background-position: bottom;
+      background-size: 100%;
+      background-repeat: no-repeat;
+  }
+
+  /* Style the header */
+  
+  header {
+      width: 100%;
+      float: left;
+      padding: 35px 10%;
+      overflow: hidden;
+      background: rgba(0,0,0,0);
+      position: absolute;
+      color: #f1f1f1;
+      z-index: 2;
+      -webkit-transition: all ease-out .5s;
+      -moz-transition: all ease-out .5s;
+      -o-transition: all ease-out .5s;
+      transition: all ease-out .5s;
+  }
+
+  .header-right {
+    float: right;
+  }
+
+  header a {
+    margin-top: 15%;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 5%;
+    border-radius: 4px;
+  }
+
+  header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  header a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  /* Page content */
+  .content {
+      padding: 16px;
+  }
+
+  /* The sticky class is added to the header with JS when it reaches its scroll position */
+  .sticky {
+      background: rgba(0,0,0,1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+  }
+
+  /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+      padding-top: 102px;
+  }
+
+  /*Parallax Image background 1*/
+  .parallax-bg1 {
+      background-image: url("../img/editor.png");
+      min-height: 300px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  /*Parallax Image background 2*/
+
+  .parallax-bg2 {
+    background-image: url("../img/code.png");
+    min-height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+  /*Timeline for my portfolio*/
+  .timeline {
+      position: relative;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  
+  .timeline p {
+    margin-top: 3%;
+  }
+
+  .timeline h2 {
+    margin-top: 1%;
+  }
+
+    /* The actual timeline (the vertical ruler) */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: white;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    
+    /* Container around content */
+    .container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+    
+    /* The circles on the timeline */
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: white;
+      border: 4px solid #FF9F55;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    /* Place the container to the left */
+    .left {
+      left: 0;
+    }
+    
+    /* Place the container to the right */
+    .right {
+      left: 50%;
+    }
+    
+    /* Add arrows to the left container (pointing right) */
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+    
+    /* Add arrows to the right container (pointing left) */
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+    
+    /* Fix the circle for containers on the right side */
+    .right::after {
+      left: -16px;
+    }
+    
+    /* The actual content */
+    .content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+    }
+    
+    /* Media queries - Responsive timeline on screens less than 600px wide */
+    @media screen and (max-width: 600px) {
+      /* Place the timelime to the left */
+      .timeline::after {
+      left: 31px;
+      }
+      
+      /* Full-width containers */
+      .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+      }
+      
+      /* Make sure that all arrows are pointing leftwards */
+      .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+      }
+    
+      /* Make sure all circles are at the same spot */
+      .left::after, .right::after {
+      left: 15px;
+      }
+      
+      /* Make all right containers behave like the left ones */
+      .right {
+      left: 0%;
+      }
+    }
+
+    /* Section 2 Portfolio*/
+    .section2 {
+      height: fit-content;
+      background-color: #f1f1f1;
+      color: black;
+      overflow: hidden;
+    }
+
+    .section2 h1 {
+      margin-top: 5%;
+      text-align: center;
+    }
+
+    /*Innerpart of the Section2*/
+
+
+    .innerpart {
+      max-width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .innerpart h2, .innerpart h1{
+      margin-left: 4%;
+      margin-bottom: 2%;
+      font-variant: small-caps;
+    }
+
+    .innerpart h2 {
+      font-size: 250%;
+    }
+
+    .innerpart h1 {
+      margin-top: 10%;
+      font-size: 450%;
+    }
+
+    .innerpart h3 {
+      margin-left: 15%;
+      margin-right: 15%;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
+
+    /*Progress bars - for technologies and languages*/
+
+    .progress-container, .project-nmth, .project-github
+    {
+      max-width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+      margin-bottom: 5%;
+    }
+    
+    .blank_progress-container
+    {
+      width: 100%;
+      background-color: grey;
+      height: 35px;
+    }
+
+    /*All technologies*/
+
+    .html-css
+    {
+      width: 85%;
+    }
+
+    .c {
+      width: 80%;
+    }
+
+    .c-sharp {
+      width: 80%;
+    }
+
+    .python {
+      width: 75%;
+    }
+
+    .pascal {
+      width: 70%;
+    }
+
+    .matlab {
+      width: 50%;
+    }
+
+    .verilog {
+      width: 40%
+    }
+
+    .arduino {
+      width: 35;
+    }
+
+    .javascript {
+      width: 40%;
+    }
+
+    .elixir {
+      width: 45%;
+    }
+
+
+    /*I've never seen a section filled in that way*/
+
+    .html-css, .c, .arduino, .c-sharp, .elixir, .javascript, .matlab, .pascal, .python, .verilog {
+      background-color: black;
+      color: whitesmoke;
+      text-align: right;
+      padding-top: 10px;
+      padding-right: 2%;
+      height: inherit;
+      overflow: hidden;
+    }
+
+    /*Blank knowledge-block*/
+
+    .blank-block {
+      float: left;
+      width: 18%;
+      height: 20px;
+      background-color: grey;
+      margin-right: 2%;
+    }
+
+    /*Project according to their type*/
+
+    .project-nmth, .project-github {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      min-height: 30px;
+    }
+
+    .project-nmth,.project-github {
+      float: left;
+      background-color: #282828;
+      min-width: 70%;
+      color: white;
+      min-height: 30px;
+      min-height: fit-content;
+    }
+
+    .project-nmth{
+      border-left:  18px solid #FF0000;
+    }
+
+    .project-github {
+      border-left: 18px solid #6e5494;
+    }
+
+    .project-nmth p, .project-github p {
+      margin: 3%;
+    }
+
+    .project-nmth h1, .project-github h1 {
+      margin: 3%;
+      font-size: xx-large;
+      font-variant: normal;
+    }
+
+    .project-nmth a, .project-github a {
+      color: white;
+    }
+    /*Filled knowledge-block*/
+
+    .filled-block {
+      float: left;
+      width: 18%;
+      height: 20px;
+      background-color: black;
+      margin-right: 2%;
+    }
+    
+    /*Buttons*/
+
+    #switcher {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      background: #0000;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    #switcher:hover {
+      background: #ddd;
+      color: black;
+    }
+
+    footer {
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 90%;
+        padding: 15px;
+        height: 50px;
+        overflow: hidden;
+    }
+
+    /*Turn off paralax for mobiles and older devices*/
+
+  @media only screen and (max-device-width: 1366px) {
+    .parallax-bg1, .parallax-bg2 {
+      background-attachment: scroll;
+    }
+}
+
+  /*Apply different display settings if the screen width less than 600px*/
+  @media only screen and (max-width: 660px) {
+    header {
+      background-color: rgba(0,0,0,1);
+    }
+
+
+    .placeholder-for-video h1 {
+      margin-top: 60%;
+    }
+
+    .section1 h1 {
+      margin-top: 200%;
+    }
+
+    .section2 h1{
+      margin-top: 80%;
+    }
+
+
+    .placeholder-for-video {
+      height: fit-content;
+    }
+
+    header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+
+    .section3 h1 {
+      margin-top: 75%;
+    }
+
+    .project-nmth h1, .project-github h1 {
+      margin: 3%;
+      font-variant: normal;
+    }
+  }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/9e3661aafc.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style/style_mp.css">
+<title>Hunor Bertalan Nemeth</title>
+</head>
+<body>
+      <!--Header-->
+    <header id="myHeader">
+      <a href="index.html#home" class="logo">Hunor Bertalan Nemeth</a>
+      <div class="header-right">
+        <a href="index.html#about">About</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#project">Projects</a>
+      </div>
+    </header>
+    <!--Background section-->
+   <section class="background">
+    <!--Placeholder for the background-->
+    <section class="placeholder"></section>
+    <!--Column-->
+    <section class="column">
+      <h1>Hungarian MP's wealth statement extracter</h1>
+      <hr>
+
+      <p id="selection">
+        <a href="https://github.com/NMTHmations/Hungarian-MP" target="_blank"><button type="button" id="switcher_github">GitHub repo</button></a>
+        <a href="mp.zip"><button type="button" id="switcher">Download</button></a>
+      </p>
+      
+      <h2>Introduction</h2>
+      <hr>
+      
+     <p> The Hungarian National Assembly's website published the MP's wealth statement, in a more than 2000 pages long document. The document in general not so well readable. To ease accesibility for the Hungarian journalists, or the simple citizens, I have created a tool, which slices the document into several wealth statement document.</p>
+      
+      <h2>Installation, settings</h2>
+      <hr>
+      
+      <p>In order to use the script, you have to download Python 3.x, from the developer's website.<br>
+      
+      Than you have to install the following packages with pip3:</p>
+      
+      <section class="cli">pip3 install beautifulsoup4<br>
+      pip3 install requests<br>
+      pip3 install regex<br>
+      pip3 install PyPDF2</section> 
+      <h2>Usage</h2>
+      <hr>
+      
+      <p>Once You have downloaded python, and all the packages, then you can use the extracter tool.<br>
+      
+      To avoid crashes, I recommend the following steps, in order to maintain your MP's wealth statements:</p>
+      
+      <ol type="1">
+      <li> names_to_csv.py, with the following command:</li>
+      <section class="cli">python3 names_to_csv.py</section>
+
+      <li>run the pdfextract.py, with this command:</li>
+      <section class="cli">python3 pdfextract.py</section>
+      </ol>
+      <h2>Limitations</h2>
+      <hr>
+      <ul>
+      <li>Well, the wealth statement documents are not ABC-ordered, so the algorithm's time complexity is much higher, which results long running time.</li>
+      
+      <li>Some politicians may have changed their names, or use different name formats, which the algorithm cannot detect so far. (I'm working on this issue)</li>
+      
+      <li>Search type version will roll out in the next few days.</li>
+    </ul>
+    <p><br></p>
+    </section>
+   </section>
+   <!--Footer-->
+    <footer>
+      <p>Copyright &#169; Hunor Bertalan Nemeth. All rights reserved!</p>
+    </footer>
+</div>
+<script src="script/script.js"></script>
+</body>
+</html>
