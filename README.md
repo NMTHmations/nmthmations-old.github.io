@@ -1,6 +1,10 @@
 # Web Portfolio
+
+**As of 11th of March 2025, this site is no longer refreshed. The information on this site is considered as deprecated and obsolete, thus it is inaccurate.**
+
 Web portfolio for Web Technologies at JAMK in 2023/2024 semester
 
-You can reach the site [here](https://student.labranet.jamk.fi/~ae9508/portfolio/index.html).
+You can reach the site [here](https://nmthmations.github.io/nmthmations-old.github.io/).
 
-(Few weeks later, I am planing to move the site to a new address)
+
+**NOTE: The repository has been archived, no longer refreshed. I am planning to make a new site with more modern and stylish approach in the near future.**
